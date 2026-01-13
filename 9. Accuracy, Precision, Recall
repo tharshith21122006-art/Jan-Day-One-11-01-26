@@ -1,0 +1,5 @@
+precision = tp/(tp+fp)
+recall = tp/(tp+fn)
+accuracy = (tp+tn)/len(y_true)
+
+print(precision, recall, accuracy)
