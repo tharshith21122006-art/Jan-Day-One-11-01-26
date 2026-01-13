@@ -1,0 +1,9 @@
+import math
+docs = ["ai is future","ai and ml"]
+
+def tf(w,d): return d.count(w)/len(d)
+def idf(w): return math.log(len(docs)/sum(1 for d in docs if w in d))
+
+for d in docs:
+    for w in set(d.split()):
+        print(w, tf(w,d.split())*idf(w))
