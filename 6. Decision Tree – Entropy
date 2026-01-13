@@ -1,0 +1,9 @@
+import math
+labels = ["Yes","Yes","No","No"]
+
+def entropy(l):
+    from collections import Counter
+    c = Counter(l)
+    return -sum((v/len(l))*math.log2(v/len(l)) for v in c.values())
+
+print(entropy(labels))
