@@ -1,0 +1,10 @@
+y_true = [1,0,1,1]
+y_pred = [1,0,0,1]
+
+tp = sum(1 for t,p in zip(y_true,y_pred) if t==p==1)
+tn = sum(1 for t,p in zip(y_true,y_pred) if t==p==0)
+fp = sum(1 for t,p in zip(y_true,y_pred) if t==0 and p==1)
+fn = sum(1 for t,p in zip(y_true,y_pred) if t==1 and p==0)
+
+print(tp,fp)
+print(fn,tn)
