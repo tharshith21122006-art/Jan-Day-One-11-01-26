@@ -1,0 +1,16 @@
+import heapq
+graph={'A':{'B':1},'B':{'C':2},'C':{}}
+
+def astar(s,g):
+    pq=[(0,s)]
+    cost={s:0}
+    while pq:
+        _,n=heapq.heappop(pq)
+        if n==g: return cost[n]
+        for x in graph[n]:
+            c=cost[n]+graph[n][x]
+            if x not in cost or c<cost[x]:
+                cost[x]=c
+                heapq.heappush(pq,(c,x))
+
+print(astar('A','C'))
