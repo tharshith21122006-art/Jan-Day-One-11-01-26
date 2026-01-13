@@ -1,0 +1,11 @@
+x=[1,2,3]
+y=[2,4,6]
+m=b=0
+lr=0.01
+
+for _ in range(1000):
+    for xi,yi in zip(x,y):
+        m -= lr*(m*xi+b-yi)*xi
+        b -= lr*(m*xi+b-yi)
+
+print(m,b)
