@@ -1,0 +1,9 @@
+import math
+
+data = [(1,2,0),(2,3,0),(9,8,1),(8,9,1)]
+test = (3,3)
+k = 3
+
+dist = sorted([(math.dist((x,y),test),label) for x,y,label in data])
+labels = [l for _,l in dist[:k]]
+print(max(set(labels), key=labels.count))
