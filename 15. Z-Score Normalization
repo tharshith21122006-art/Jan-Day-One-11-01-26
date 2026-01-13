@@ -1,0 +1,5 @@
+import statistics
+data=[10,20,30]
+mean=statistics.mean(data)
+std=statistics.stdev(data)
+print([(x-mean)/std for x in data])
