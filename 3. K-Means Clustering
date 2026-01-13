@@ -1,0 +1,14 @@
+import random, math
+
+data = [(1,2),(2,3),(8,8),(9,9)]
+centroids = random.sample(data,2)
+
+for _ in range(5):
+    clusters = {0:[],1:[]}
+    for p in data:
+        d = [math.dist(p,c) for c in centroids]
+        clusters[d.index(min(d))].append(p)
+    for i in clusters:
+        centroids[i] = tuple(sum(x[j] for x in clusters[i])/len(clusters[i]) for j in range(2))
+
+print(centroids)
