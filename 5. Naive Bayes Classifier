@@ -1,0 +1,10 @@
+data = [("Sunny","No"),("Sunny","No"),("Rain","Yes")]
+
+def predict(sample):
+    classes = set(c for _,c in data)
+    probs = {}
+    for c in classes:
+        probs[c] = sum(1 for d in data if d==(sample,c))
+    return max(probs,key=probs.get)
+
+print(predict("Sunny"))
